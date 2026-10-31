@@ -1,4 +1,6 @@
-import { skills } from "@/lib/data";
+"use client";
+
+import { useLanguage } from "./LanguageContext";
 
 const colorMap: Record<string, string> = {
   green: "text-green-400 border-green-500/30 bg-green-500/5",
@@ -9,15 +11,23 @@ const colorMap: Record<string, string> = {
 };
 
 export default function Skills() {
+  const { t } = useLanguage();
+  
+  const skillCategories = [
+    { category: t.skills.categories.os, color: "green", items: t.skills.items.os },
+    { category: t.skills.categories.virt, color: "cyan", items: t.skills.items.virt },
+    { category: t.skills.categories.panel, color: "amber", items: t.skills.items.panel },
+    { category: t.skills.categories.net, color: "purple", items: t.skills.items.net },
+    { category: t.skills.categories.sec, color: "red", items: t.skills.items.sec },
+    { category: t.skills.categories.auto, color: "green", items: t.skills.items.auto },
+  ];
+
   return (
     <section id="skills" className="px-4 md:px-12 py-20 max-w-6xl mx-auto">
-      <SectionHeader
-        cmd="htop --skills"
-        title="Skills & Stack"
-        subtitle="Active services across my infrastructure toolchain"
-      />
+      <SectionHeader cmd="htop --skills" title={t.skills.title} subtitle={t.skills.subtitle} />
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-        {skills.map((group) => (
+        {skillCategories.map((group) => (
           <div key={group.category} className="panel p-5">
             <div className="flex items-center justify-between mb-3">
               <h3 className={`text-xs font-bold uppercase tracking-wider ${colorMap[group.color].split(" ")[0]}`}>

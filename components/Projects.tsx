@@ -1,4 +1,6 @@
-import { projects } from "@/lib/data";
+"use client";
+
+import { useLanguage } from "./LanguageContext";
 import { SectionHeader } from "./Skills";
 import { Shield, Activity } from "lucide-react";
 
@@ -8,16 +10,19 @@ const colorMap: Record<string, { text: string; border: string; bg: string }> = {
 };
 
 export default function Projects() {
+  const { t } = useLanguage();
+
+  const projectList = [
+    { ...t.projects.p1, color: "purple" },
+    { ...t.projects.p2, color: "cyan" },
+  ];
+
   return (
     <section id="projects" className="px-4 md:px-12 py-20 max-w-5xl mx-auto">
-      <SectionHeader
-        cmd="docker ps --format 'table'"
-        title="Security Projects"
-        subtitle="Labs where I turned theory into detection pipelines"
-      />
+      <SectionHeader cmd="docker ps --format 'table'" title={t.projects.title} subtitle={t.projects.subtitle} />
 
       <div className="mt-10 grid gap-6">
-        {projects.map((p) => {
+        {projectList.map((p) => {
           const c = colorMap[p.color];
           return (
             <div key={p.title} className="panel overflow-hidden">
@@ -62,3 +67,4 @@ export default function Projects() {
     </section>
   );
 }
+

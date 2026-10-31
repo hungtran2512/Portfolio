@@ -1,140 +1,222 @@
+export type Language = "en" | "vi";
+
+export const translations = {
+  en: {
+    nav: { skills: "Skills", experience: "Experience", projects: "Projects", certs: "Certificates" },
+    hero: {
+      command: "whoami --verbose",
+      role: "System Administrator",
+      tagline: "Infrastructure · Security · AI-SOC",
+      status: "Available for opportunities",
+      about: [
+        "Dedicated System Administrator with a strong background in Information Assurance.",
+        "Specializing in infrastructure management, server virtualization, and system optimization.",
+        "Proven track record maintaining high uptime across Linux/Windows, web hosting & cloud.",
+        "Motivated to scale into a proficient Sysadmin / DevOps Engineer.",
+      ],
+      btnProjects: "view projects",
+      btnContact: "contact me",
+      btnExp: "experience",
+    },
+    skills: {
+      title: "Skills & Stack",
+      subtitle: "Active services across my infrastructure toolchain",
+      categories: {
+        os: "Operating Systems",
+        virt: "Virtualization & Cloud",
+        panel: "Control Panels",
+        net: "Network Services",
+        sec: "Security & Firewalls",
+        auto: "Automation / AI",
+      },
+      items: {
+        os: ["Linux (Ubuntu, CentOS, AlmaLinux, Kali)", "Windows Server"],
+        virt: ["Proxmox VE (Snapshot, Monitoring)", "VMware"],
+        panel: ["cPanel", "CyberPanel", "aaPanel"],
+        net: ["DNS (A, CNAME, MX, TXT)", "Mail (SMTP, IMAP, POP3)", "SSL/TLS & SSH"],
+        sec: ["nftables", "WAF (Barracuda)", "SPF / DKIM / DMARC"],
+        auto: ["Python", "ELK Stack", "Phi-3 (LLM fine-tune)", "Scikit-learn"],
+      },
+    },
+    experience: {
+      title: "Experience",
+      subtitle: "Production systems I've kept online & secure",
+      role: "System Administrator",
+      period: "Apr 2026 — Present",
+      status: "active (running)",
+      loaded: "Loaded: active | Uptime: continuous",
+      points: [
+        { title: "Infrastructure & VM Management", desc: "Maintained Linux (Ubuntu + aaPanel templates) and Windows VPS on Proxmox VE, managing resource allocation, hardware indicators, automated snapshots." },
+        { title: "Web Server & Control Panel Administration", desc: "Administered cPanel, CyberPanel, aaPanel. Assisted customers with source code integration, DB deployment, file permission auditing." },
+        { title: "Advanced Troubleshooting", desc: "Resolved WordPress/Laravel connection errors by debugging wp-config.php, .env, and fixing misconfigured system permissions." },
+        { title: "DNS & Mail Security", desc: "Architected DNS routing (Cloudflare, A/CNAME/MX). Hardened email deliverability via SPF, DKIM, DMARC TXT records." },
+        { title: "SSL/TLS Lifecycle", desc: "Managed Let's Encrypt automation & commercial Sectigo certs, verifying via HTTP/HTTPS file and CNAME validation." },
+      ],
+    },
+    projects: {
+      title: "Security Projects",
+      subtitle: "Labs where I turned theory into detection pipelines",
+      p1: {
+        title: "AI-SOC for Threat Detection & Prevention",
+        tag: "SECURITY / AI",
+        period: "Sep 2025 — Dec 2025",
+        tech: ["Python", "Phi-3-mini", "Qwen", "Linux Security"],
+        highlights: [
+          "Built a security monitoring system detecting Web attacks (SQLi, XSS) and Database threats (Brute Force, Insider Threats).",
+          "Designed Hybrid Analysis Workflow: Fast Path (Rules) + Slow Path (Generative AI) for zero-day payloads.",
+          "Fine-tuned Phi-3-mini on custom dataset to identify Privilege Escalation bypassing traditional WAFs.",
+          "Integrated Automated Response: real-time IP blocking & compromised DB user lockdown.",
+        ],
+        status: "Defense-in-Depth",
+      },
+      p2: {
+        title: "Barracuda WAF Security Lab",
+        tag: "WAF / LOG PIPELINE",
+        period: "Jan 2025 — Apr 2025",
+        tech: ["VMware", "Barracuda WAF", "ELK Stack", "Scikit-learn"],
+        highlights: [
+          "Deployed Barracuda WAF on VMware to secure DVWA test application.",
+          "Conducted security testing against SQLi, XSS, DDoS, brute-force attacks.",
+          "Built real-time monitoring: Filebeat → Logstash → Elasticsearch → Kibana pipeline.",
+          "Developed ML model (Logistic Regression, Isolation Forest) to classify malicious queries.",
+          "Automated incident response: malicious IPs pushed to Windows Firewall via PowerShell.",
+        ],
+        status: "Monitoring Active",
+      },
+    },
+    certs: {
+      title: "Certificates & Education",
+      subtitle: "Validated knowledge across networking & security",
+      c1: "CCNA: Introduction to Networks",
+      c2: "CyberOps Associate",
+      c3: "Ethical Hacker",
+      issued: "issued",
+      edu: "Information Assurance",
+    },
+    footer: {
+      title: "Let's build something stable.",
+      subtitle: "Open to Sysadmin / DevOps roles & security-focused collaborations.",
+      email: "email",
+      phone: "phone",
+      location: "location",
+      rights: "Built with Next.js & Tailwind.",
+      status: "All systems operational",
+    },
+  },
+  vi: {
+    nav: { skills: "Kỹ năng", experience: "Kinh nghiệm", projects: "Dự án", certs: "Chứng chỉ" },
+    hero: {
+      command: "whoami --verbose",
+      role: "Quản trị viên Hệ thống",
+      tagline: "Hạ tầng · Bảo mật · AI-SOC",
+      status: "Sẵn sàng cho cơ hội mới",
+      about: [
+        "Quản trị viên hệ thống tận tụy với nền tảng vững chắc về Đảm bảo Thông tin.",
+        "Chuyên sâu về quản lý hạ tầng, ảo hóa máy chủ và tối ưu hóa hệ thống.",
+        "Có thành tích duy trì uptime cao trên môi trường Linux/Windows, web hosting & cloud.",
+        "Định hướng phát triển thành Kỹ sư Sysadmin / DevOps chuyên nghiệp.",
+      ],
+      btnProjects: "xem dự án",
+      btnContact: "liên hệ",
+      btnExp: "kinh nghiệm",
+    },
+    skills: {
+      title: "Kỹ năng & Công nghệ",
+      subtitle: "Các dịch vụ đang hoạt động trong hệ sinh thái của tôi",
+      categories: {
+        os: "Hệ điều hành",
+        virt: "Ảo hóa & Cloud",
+        panel: "Control Panels",
+        net: "Dịch vụ Mạng",
+        sec: "Bảo mật & Firewall",
+        auto: "Tự động hóa / AI",
+      },
+      items: {
+        os: ["Linux (Ubuntu, CentOS, AlmaLinux, Kali)", "Windows Server"],
+        virt: ["Proxmox VE (Snapshot, Monitoring)", "VMware"],
+        panel: ["cPanel", "CyberPanel", "aaPanel"],
+        net: ["DNS (A, CNAME, MX, TXT)", "Mail (SMTP, IMAP, POP3)", "SSL/TLS & SSH"],
+        sec: ["nftables", "WAF (Barracuda)", "SPF / DKIM / DMARC"],
+        auto: ["Python", "ELK Stack", "Phi-3 (LLM fine-tune)", "Scikit-learn"],
+      },
+    },
+    experience: {
+      title: "Kinh nghiệm làm việc",
+      subtitle: "Các hệ thống production tôi đã duy trì & bảo mật",
+      role: "Quản trị viên Hệ thống",
+      period: "Tháng 4 2026 — Hiện tại",
+      status: "đang hoạt động (active)",
+      loaded: "Đã tải: active | Uptime: liên tục",
+      points: [
+        { title: "Quản lý Hạ tầng & VM", desc: "Duy trì Linux (Ubuntu + aaPanel) và Windows VPS trên Proxmox VE, quản lý phân bổ tài nguyên, chỉ số phần cứng, snapshot tự động." },
+        { title: "Quản trị Web Server & Control Panel", desc: "Quản trị cPanel, CyberPanel, aaPanel. Hỗ trợ khách hàng tích hợp source code, triển khai DB, kiểm tra quyền hệ thống tệp." },
+        { title: "Xử lý sự cố Nâng cao", desc: "Khắc phục lỗi kết nối WordPress/Laravel bằng cách debug wp-config.php, .env và sửa lỗi phân quyền hệ thống." },
+        { title: "Bảo mật DNS & Mail", desc: "Thiết kế định tuyến DNS (Cloudflare, A/CNAME/MX). Tăng cường khả năng gửi mail qua SPF, DKIM, DMARC TXT records." },
+        { title: "Quản lý vòng đời SSL/TLS", desc: "Quản lý chứng chỉ Let's Encrypt tự động & thương mại Sectigo, xác minh qua HTTP/HTTPS file và CNAME record." },
+      ],
+    },
+    projects: {
+      title: "Dự án Bảo mật",
+      subtitle: "Các lab tôi đã biến lý thuyết thành pipeline phát hiện thực tế",
+      p1: {
+        title: "AI-SOC Phát hiện & Ngăn chặn Mối đe dọa",
+        tag: "BẢO MẬT / AI",
+        period: "Tháng 9 2025 — Tháng 12 2025",
+        tech: ["Python", "Phi-3-mini", "Qwen", "Linux Security"],
+        highlights: [
+          "Xây dựng hệ thống giám sát bảo mật phát hiện tấn công Web (SQLi, XSS) và mối đe dọa CSDL (Brute Force, Insider Threats).",
+          "Thiết kế Quy trình Phân tích Kết hợp: Fast Path (Rules) + Slow Path (Gen AI) cho các payload zero-day.",
+          "Fine-tune Phi-3-mini trên tập dữ liệu tùy chỉnh để phát hiện nỗ lực leo thang đặc quyền (vượt qua WAF truyền thống).",
+          "Tích hợp Phản hồi Tự động: chặn IP & khóa user DB bị xâm nhập theo thời gian thực.",
+        ],
+        status: "Phòng thủ Chiều sâu (Defense-in-Depth)",
+      },
+      p2: {
+        title: "Lab Bảo mật Barracuda WAF",
+        tag: "WAF / LOG PIPELINE",
+        period: "Tháng 1 2025 — Tháng 4 2025",
+        tech: ["VMware", "Barracuda WAF", "ELK Stack", "Scikit-learn"],
+        highlights: [
+          "Triển khai Barracuda WAF trên VMware để bảo vệ ứng dụng web thử nghiệm DVWA.",
+          "Thực hiện kiểm thử bảo mật chống lại các cuộc tấn công SQLi, XSS, DDoS, brute-force.",
+          "Xây dựng giám sát thời gian thực: pipeline Filebeat → Logstash → Elasticsearch → Kibana.",
+          "Phát triển mô hình ML (Logistic Regression, Isolation Forest) để phân loại truy vấn độc hại.",
+          "Tự động hóa phản hồi sự cố: đẩy IP độc hại vào Windows Firewall qua PowerShell.",
+        ],
+        status: "Giám sát Đang hoạt động",
+      },
+    },
+    certs: {
+      title: "Chứng chỉ & Học vấn",
+      subtitle: "Kiến thức được xác thực về mạng & bảo mật",
+      c1: "CCNA: Giới thiệu về Mạng",
+      c2: "CyberOps Associate",
+      c3: "Ethical Hacker",
+      issued: "cấp năm",
+      edu: "Đảm bảo Thông tin",
+    },
+    footer: {
+      title: "Cùng xây dựng hệ thống ổn định.",
+      subtitle: "Sẵn sàng cho các vị trí Sysadmin / DevOps & hợp tác bảo mật.",
+      email: "email",
+      phone: "điện thoại",
+      location: "vị trí",
+      rights: "Xây dựng với Next.js & Tailwind.",
+      status: "Mọi hệ thống hoạt động bình thường",
+    },
+  },
+};
+
 export const profile = {
   name: "Tran Gia Hung",
   handle: "hung-tran",
-  role: "System Administrator",
-  tagline: "Infrastructure · Security · AI-SOC",
-  location: "Binh Tan, Ho Chi Minh City",
   email: "trangiahung251203@gmail.com",
   phone: "0707 709 857",
-  status: "Available for opportunities",
-  about: [
-    "Dedicated System Administrator with a strong background in Information Assurance.",
-    "Specializing in infrastructure management, server virtualization, and system optimization.",
-    "Proven track record maintaining high uptime across Linux/Windows, web hosting & cloud.",
-    "Motivated to scale into a proficient Sysadmin / DevOps Engineer.",
-  ],
+  location: "Thu Duc, Ho Chi Minh City",
 };
-
-export const skills = [
-  {
-    category: "Operating Systems",
-    color: "green",
-    items: ["Linux (Ubuntu, CentOS, AlmaLinux, Kali)", "Windows Server"],
-  },
-  {
-    category: "Virtualization & Cloud",
-    color: "cyan",
-    items: ["Proxmox VE (Snapshot, Monitoring)", "VMware"],
-  },
-  {
-    category: "Control Panels",
-    color: "amber",
-    items: ["cPanel", "CyberPanel", "aaPanel"],
-  },
-  {
-    category: "Network Services",
-    color: "purple",
-    items: ["DNS (A, CNAME, MX, TXT)", "Mail (SMTP, IMAP, POP3)", "SSL/TLS & SSH"],
-  },
-  {
-    category: "Security & Firewalls",
-    color: "red",
-    items: ["nftables", "WAF (Barracuda)", "SPF / DKIM / DMARC"],
-  },
-  {
-    category: "Automation / AI",
-    color: "green",
-    items: ["Python", "ELK Stack", "Phi-3 (LLM fine-tune)", "Scikit-learn"],
-  },
-];
-
-export const experience = [
-  {
-    company: "VIETNIX",
-    role: "System Administrator",
-    period: "Apr 2026 — Present",
-    status: "active",
-    points: [
-      {
-        title: "Infrastructure & VM Management",
-        desc: "Maintained Linux (Ubuntu + aaPanel templates) and Windows VPS on Proxmox VE, managing resource allocation, hardware indicators, automated snapshots.",
-      },
-      {
-        title: "Web Server & Control Panel Administration",
-        desc: "Administered cPanel, CyberPanel, aaPanel. Assisted customers with source code integration, DB deployment, file permission auditing.",
-      },
-      {
-        title: "Advanced Troubleshooting",
-        desc: "Resolved WordPress/Laravel connection errors by debugging wp-config.php, .env, and fixing misconfigured system permissions.",
-      },
-      {
-        title: "DNS & Mail Security",
-        desc: "Architected DNS routing (Cloudflare, A/CNAME/MX). Hardened email deliverability via SPF, DKIM, DMARC TXT records.",
-      },
-      {
-        title: "SSL/TLS Lifecycle",
-        desc: "Managed Let's Encrypt automation & commercial Sectigo certs, verifying via HTTP/HTTPS file and CNAME validation.",
-      },
-    ],
-  },
-];
-
-export const projects = [
-  {
-    title: "AI-SOC for Threat Detection & Prevention",
-    tag: "SECURITY / AI",
-    period: "Sep 2025 — Dec 2025",
-    color: "purple",
-    tech: ["Python", "Phi-3-mini", "Qwen", "Linux Security"],
-    highlights: [
-      "Built a security monitoring system detecting Web attacks (SQLi, XSS) and Database threats (Brute Force, Insider Threats).",
-      "Designed Hybrid Analysis Workflow: Fast Path (Rules) + Slow Path (Generative AI) for zero-day payloads.",
-      "Fine-tuned Phi-3-mini on custom dataset to identify Privilege Escalation bypassing traditional WAFs.",
-      "Integrated Automated Response: real-time IP blocking & compromised DB user lockdown.",
-    ],
-    status: "Defense-in-Depth",
-  },
-  {
-    title: "Barracuda WAF Security Lab",
-    tag: "WAF / LOG PIPELINE",
-    period: "Jan 2025 — Apr 2025",
-    color: "cyan",
-    tech: ["VMware", "Barracuda WAF", "ELK Stack", "Scikit-learn"],
-    highlights: [
-      "Deployed Barracuda WAF on VMware to secure DVWA test application.",
-      "Conducted security testing against SQLi, XSS, DDoS, brute-force attacks.",
-      "Built real-time monitoring: Filebeat → Logstash → Elasticsearch → Kibana pipeline.",
-      "Developed ML model (Logistic Regression, Isolation Forest) to classify malicious queries.",
-      "Automated incident response: malicious IPs pushed to Windows Firewall via PowerShell.",
-    ],
-    status: "Monitoring Active",
-  },
-];
-
-export const certificates = [
-  {
-    name: "CCNA: Introduction to Networks",
-    issuer: "Cisco Networking Academy",
-    year: "2023",
-    color: "cyan",
-  },
-  {
-    name: "CyberOps Associate",
-    issuer: "Cisco Networking Academy",
-    year: "2023",
-    color: "green",
-  },
-  {
-    name: "Ethical Hacker",
-    issuer: "Cisco Networking Academy",
-    year: "2025",
-    color: "purple",
-  },
-];
 
 export const education = {
   school: "PTF University",
   period: "2021 — 2025",
-  major: "Information Assurance",
   courses: ["Network Security", "System Hardening", "Web Security", "Database Security"],
 };

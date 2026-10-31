@@ -31,6 +31,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/components/LanguageContext";
 
 const mono = JetBrains_Mono({
   subsets: ["latin", "vietnamese"],
@@ -51,10 +52,20 @@ export const metadata: Metadata = {
   },
 };
 
+// export default function RootLayout({ children }: { children: React.ReactNode }) {
+//   return (
+//     <html lang="en" className={mono.variable}>
+//       <body className="antialiased">{children}</body>
+//     </html>
+//   );
+// }
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={mono.variable}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }
